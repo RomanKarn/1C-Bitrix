@@ -12,8 +12,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         </div>
         <div class="footer-contacts__text">
           <span><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__text.php", array(),array("MODE" => "text")); ?></span>
-          <a href="tel:+73822211195"><? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(),array("MODE" => "text")); ?></a>
-          <a href="mailto:info@fcva-bank.ru"><? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(),array("MODE" => "text")); ?></a>
+          <a href="tel:<? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(),array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(),array("MODE" => "text")); ?></a>
+          <a href="mailto:<? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(),array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(),array("MODE" => "text")); ?></a>
         </div>
       </div>
       <div class="footer-contacts__point footer-contacts__point--social">
@@ -38,8 +38,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
       </div>
     </section>
     <div class="footer-contacts__copyright copyright">
-      <p>Copyright © 2018 Футбольная Школа «Ва-Банк»</p>
-      <p class="redramka"><a href="https://redramka.ru/" target="_blank">Разработка сайта <span class="redramka__brand">Красная рамка</span></a></p>
+      <p><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__copyright.php", array(),array("MODE" => "text")); ?></p>
+      <p class="redramka"><a href="https://redramka.ru/" target="_blank"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka.php", array(),array("MODE" => "text")); ?> <span class="redramka__brand"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka__brand.php", array(),array("MODE" => "text")); ?></span></a></p>
     </div>
   </div>
 </footer>

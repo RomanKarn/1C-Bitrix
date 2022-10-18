@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 	<li class="partners__item">
 		<a href="#" class="partners__link">
 			<div class="partners__img">
-				<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<? echo $arItem["NAME"] ?>" width="65" height="54">
+				<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<? echo $arItem["NAME"] ?>">
 			</div>
 		</a>
 	</li>

@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("index");
+$APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
 ?>
 <main>
     <section class="our-team">
@@ -682,7 +682,6 @@ $APPLICATION->SetTitle("index");
                 </div>
             </div>
         </div>
-
     </section>
 
 
