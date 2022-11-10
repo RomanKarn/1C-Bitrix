@@ -14,7 +14,11 @@ $this->setFrameMode(true);
 ?>
 
 <? foreach ($arResult["ITEMS"] as $arItem) : ?>
-	<li class="teachers__item">
+	<?
+	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	?>
+	<li class="teachers__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<a href="trainers-modal" rel="trainers-modal" class="teachers__link j-modal-link j-ajax-popup">
 			<div class="teachers__img">
 				<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="" width="251" height="228">

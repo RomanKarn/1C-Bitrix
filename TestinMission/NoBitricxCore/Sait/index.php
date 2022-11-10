@@ -4,20 +4,20 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
 ?>
 <main>
     <section class="our-team">
-        <h1 class="visually-hidden"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/visually-hidden.php", array(),array("MODE" => "text")); ?></h1>
+        <h1 class="visually-hidden"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/visually-hidden.php", array(), array("MODE" => "text")); ?></h1>
         <div class="our-team__header">
             <div class="container">
-                <p class="our-team__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__title.php", array(),array("MODE" => "text")); ?></p>
-                <p class="our-team__subtitle"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__subtitle.php", array(),array("MODE" => "text")); ?></p>
-                <a class="our-team__button button button--arrow" href="#"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__button button button--arrow.php", array(),array("MODE" => "text")); ?></a>
+                <? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__title.php", array(), array("MODE" => "html")); ?>
+                <? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__subtitle.php", array(), array("MODE" => "html")); ?>
+                <a class="our-team__button button button--arrow" href="#"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/our-team__button button button--arrow.php", array(), array("MODE" => "text")); ?></a>
             </div>
         </div>
         <div class="our-team__features features">
             <div class="container">
                 <ul class="features__list">
-                    <li class="features__item features__item--ball"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--ball.php", array(),array("MODE" => "text")); ?></li>
-                    <li class="features__item features__item--team"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--team.php", array(),array("MODE" => "text")); ?></li>
-                    <li class="features__item features__item--school"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--school.php", array(),array("MODE" => "text")); ?></li>
+                    <li class="features__item features__item--ball"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--ball.php", array(), array("MODE" => "text")); ?></li>
+                    <li class="features__item features__item--team"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--team.php", array(), array("MODE" => "text")); ?></li>
+                    <li class="features__item features__item--school"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/features__item--school.php", array(), array("MODE" => "text")); ?></li>
                 </ul>
             </div>
         </div>
@@ -25,14 +25,14 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
             <div class="our-team__join join-block">
                 <div class="container">
                     <h3 class="join-block__title">
-                        Набор в детские команды
+                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__title.php", array(), array("MODE" => "text")); ?>
                     </h3>
                     <ul class="join-block__list">
-                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item1.php", array(),array("MODE" => "text")); ?></li>
-                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item2.php", array(),array("MODE" => "text")); ?></li>
-                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item3.php", array(),array("MODE" => "text")); ?></li>
+                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item1.php", array(), array("MODE" => "text")); ?></li>
+                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item2.php", array(), array("MODE" => "text")); ?></li>
+                        <li class="join-block__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/join-block__item3.php", array(), array("MODE" => "text")); ?></li>
                     </ul>
-                    <button class="button button--wide join-block__button j-modal-link" rel="appointment-modal" type="button">Записаться на занятие
+                    <button class="button button--wide join-block__button j-modal-link" rel="appointment-modal" type="button"><? $APPLICATION->IncludeFile(SITE_DIR . "include/our-team/button_button--wide.php", array(), array("MODE" => "text")); ?>
                     </button>
                 </div>
             </div>
@@ -42,8 +42,8 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
     <section class="news">
         <div class="container">
             <div class="news__header section-header">
-                <div class="section-header__name">Новости</div>
-                <a class="section-header__link link-red link-red--arrow" href="">Все новости</a>
+                <div class="section-header__name"><? $APPLICATION->IncludeFile(SITE_DIR . "include/news/section-header__name.php", array(), array("MODE" => "text")); ?></div>
+                <a class="section-header__link link-red link-red--arrow" href=""><? $APPLICATION->IncludeFile(SITE_DIR . "include/news/section-header__link.php", array(), array("MODE" => "text")); ?></a>
             </div>
             <div class="news__block">
                 <div class="news__main">
@@ -320,7 +320,7 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
             <div class="container">
                 <div class="history__header">
                     <h3 class="history__title">
-                    <? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__title.php", array(),array("MODE" => "text")); ?>
+                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__title.php", array(), array("MODE" => "text")); ?>
                     </h3>
                     <a class="history__button button button--arrow" href="#">Подробнее</a>
                 </div>
@@ -405,21 +405,21 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
             <div class="container">
                 <ul class="history__list">
                     <li class="history__point">
-                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date1.php", array(),array("MODE" => "text")); ?></span>
-                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description1.php", array(),array("MODE" => "text")); ?></span>
+                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date1.php", array(), array("MODE" => "text")); ?></span>
+                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description1.php", array(), array("MODE" => "text")); ?></span>
                     </li>
                     <li class="history__point">
-                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date2.php", array(),array("MODE" => "text")); ?></span>
-                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description2.php", array(),array("MODE" => "text")); ?>
+                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date2.php", array(), array("MODE" => "text")); ?></span>
+                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description2.php", array(), array("MODE" => "text")); ?>
                         </span>
                     </li>
                     <li class="history__point">
-                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date3.php", array(),array("MODE" => "text")); ?></span>
-                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description3.php", array(),array("MODE" => "text")); ?></span>
+                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date3.php", array(), array("MODE" => "text")); ?></span>
+                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description3.php", array(), array("MODE" => "text")); ?></span>
                     </li>
                     <li class="history__point">
-                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date4.php", array(),array("MODE" => "text")); ?></span>
-                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description4.php", array(),array("MODE" => "text")); ?></span>
+                        <span class="history__date"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__date4.php", array(), array("MODE" => "text")); ?></span>
+                        <span class="history__description"><? $APPLICATION->IncludeFile(SITE_DIR . "include/history/history__description4.php", array(), array("MODE" => "text")); ?></span>
                     </li>
                 </ul>
             </div>
@@ -429,8 +429,8 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
     <section class="teachers">
         <div class="container">
             <div class="teachers__header section-header">
-                <div class="section-header__name">Тренеры</div>
-                <a class="section-header__link link-red link-red--arrow" href="">Весь состав</a>
+                <div class="section-header__name"><? $APPLICATION->IncludeFile(SITE_DIR . "include/trener/section-header__name.php", array(), array("MODE" => "text")); ?></div>
+                <a class="section-header__link link-red link-red--arrow" href=""><? $APPLICATION->IncludeFile(SITE_DIR . "include/trener/section-header__link.php", array(), array("MODE" => "text")); ?></a>
             </div>
             <ul class="teachers__list">
                 <? $APPLICATION->IncludeComponent(
@@ -504,23 +504,23 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
 
     <section class="about-school">
         <div class="container">
-            <h3 class="about-school__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__title.php", array(),array("MODE" => "text")); ?></h3>
+            <h3 class="about-school__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__title.php", array(), array("MODE" => "text")); ?></h3>
             <ul class="about-school__list">
                 <li class="about-school__item about-school__item--sports">
-                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption1.php", array(),array("MODE" => "text")); ?></b>
-                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text1.php", array(),array("MODE" => "text")); ?></span>
+                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption1.php", array(), array("MODE" => "text")); ?></b>
+                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text1.php", array(), array("MODE" => "text")); ?></span>
                 </li>
                 <li class="about-school__item about-school__item--trainer">
-                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption2.php", array(),array("MODE" => "text")); ?></b>
-                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text2.php", array(),array("MODE" => "text")); ?></span>
+                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption2.php", array(), array("MODE" => "text")); ?></b>
+                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text2.php", array(), array("MODE" => "text")); ?></span>
                 </li>
                 <li class="about-school__item about-school__item--license">
-                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption3.php", array(),array("MODE" => "text")); ?></b>
-                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text3.php", array(),array("MODE" => "text")); ?></span>
+                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption3.php", array(), array("MODE" => "text")); ?></b>
+                    <span class="about-school__text"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text3.php", array(), array("MODE" => "text")); ?></span>
                 </li>
                 <li class="about-school__item about-school__item--tourney">
-                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption4.php", array(),array("MODE" => "text")); ?></b>
-                    <span class="about-school__text"> <? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text4.php", array(),array("MODE" => "text")); ?></span>
+                    <b class="about-school__caption"><? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__caption4.php", array(), array("MODE" => "text")); ?></b>
+                    <span class="about-school__text"> <? $APPLICATION->IncludeFile(SITE_DIR . "include/about-school/about-school__text4.php", array(), array("MODE" => "text")); ?></span>
                 </li>
             </ul>
         </div>
@@ -531,48 +531,36 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
             <div class="invite__block">
                 <div class="container">
                     <h3 class="invite__title">
-                    <? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__title.php", array(),array("MODE" => "text")); ?>
+                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__title.php", array(), array("MODE" => "text")); ?>
                     </h3>
                     <ul class="invite__list">
-                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item1.php", array(),array("MODE" => "html")); ?></li>
-                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item2.php", array(),array("MODE" => "text")); ?></li>
-                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item3.php", array(),array("MODE" => "text")); ?></li>
-                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item4.php", array(),array("MODE" => "html")); ?></li>
+                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item1.php", array(), array("MODE" => "html")); ?></li>
+                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item2.php", array(), array("MODE" => "text")); ?></li>
+                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item3.php", array(), array("MODE" => "text")); ?></li>
+                        <li class="invite__item"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/invite__item4.php", array(), array("MODE" => "html")); ?></li>
                     </ul>
                     <a class="invite__link link-red link-red--arrow" href="#">Смотреть расписание</a>
                 </div>
             </div>
             <div class="invite__appointment appointment">
                 <div class="container">
-                    <form action="#" class="appointment__form form" method="post">
-                        <p class="appointment__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/invite/appointment__title.php", array(),array("MODE" => "html")); ?> 
-                        </p>
-                        <div class="form__field">
-                            <label class="visually-hidden" for="name">Имя</label>
-                            <input type="text" class="form__input" placeholder="Имя" id="name" name="name" required="">
-                        </div>
-                        <div class="form__field">
-                            <label class="visually-hidden" for="phone">Телефон</label>
-                            <input type="tel" class="form__input" placeholder="Телефон" id="phone" name="phone" required="">
-                        </div>
-                        <div class="form__field">
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.feedback",
+                        "feedbackpersonal",
+                        array(
+                            "EMAIL_TO" => "WorkKarn@yandex.ru",    // E-mail, на который будет отправлено письмо
+                            "EVENT_MESSAGE_ID" => array(    // Почтовые шаблоны для отправки письма
+                                0 => "7",
+                            ),
+                            "OK_TEXT" => "Спасибо, ваше сообщение принято.",    // Сообщение, выводимое пользователю после отправки
+                            "REQUIRED_FIELDS" => array(    // Обязательные поля для заполнения
+                                0 => "NAME",
 
-                            <select class="form__select j-select" name="age" id="age">
-                                <option value=" " disabled="" selected=""> Возраст ребенка</option>
-                                <option value="4-6">4-6 лет</option>
-                                <option value="7-9">7-9 лет</option>
-                                <option value="10-12">10-12 лет</option>
-                                <option value="13-15">13-15 лет</option>
-                            </select>
-
-                        </div>
-                        <div class="form__field">
-                            <input type="checkbox" class="visually-hidden form__input--checkbox " id="agree" name="agree" required="">
-                            <label for="agree" class="form__label--checkbox"> Я согласен на обработку персональных данных
-                            </label>
-                        </div>
-                        <button class="button appointment__button button--wide" type="submit">Записаться<span class="appointment__laptop-visible"> на занятие</span></button>
-                    </form>
+                            ),
+                            "USE_CAPTCHA" => "N",    // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+                        ),
+                        false
+                    ); ?>
                 </div>
             </div>
         </div>
@@ -583,12 +571,8 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
             <div class="partners__block">
                 <div class="container">
                     <div class="partners__header">
-                        <p class="partners__title">
-                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/partners__title.php", array(),array("MODE" => "text")); ?> 
-                        </p>
-                        <span class="partners__subtitle">
-                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/partners__subtitle.php", array(),array("MODE" => "text")); ?>  
-                        </span>
+                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/partners__title.php", array(), array("MODE" => "html")); ?>
+                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/partners__subtitle.php", array(), array("MODE" => "html")); ?>
                     </div>
                     <ul class="partners__list">
                         <? $APPLICATION->IncludeComponent(
@@ -663,8 +647,8 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
                 <div class="container">
                     <div class="offer__header">
                         <div class="offer__text">
-                            <div class="offer__name"><? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__name.php", array(),array("MODE" => "text")); ?></div>
-                            <div class="offer__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__title.php", array(),array("MODE" => "text")); ?></div>
+                            <div class="offer__name"><? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__name.php", array(), array("MODE" => "text")); ?></div>
+                            <div class="offer__title"><? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__title.php", array(), array("MODE" => "text")); ?></div>
                         </div>
                         <div class="offer__img">
                             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/partners/bear-offer.jpg" alt="" height="104" width="104">
@@ -672,10 +656,10 @@ $APPLICATION->SetTitle("Спортивная школа «Ва-банк»");
                     </div>
                     <ul class="offer__list">
                         <li class="offer__item">
-                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__item1.php", array(),array("MODE" => "text")); ?>
+                            <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__item1.php", array(), array("MODE" => "text")); ?>
                         </li>
                         <li class="offer__item">
-                        <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__item2.php", array(),array("MODE" => "text")); ?> 
+                            <? $APPLICATION->IncludeFile(SITE_DIR . "include/partners/offer__item2.php", array(), array("MODE" => "text")); ?>
                         </li>
                     </ul>
 

@@ -64,27 +64,23 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                 <a href="tel:+73822211195" class="page-nav__phone"><? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(), array("MODE" => "text")); ?></a>
                 <button class="page-nav__handler j-menu-button" type="button"><span class="visually-hidden">Меню</span>
                 </button>
-                <ul class="page-nav__menu main-menu j-menu">
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:menu",
-                        "menu",
+                        "newmenu",
                         array(
-                            "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-                            "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
-                            "DELAY" => "N",    // Откладывать выполнение шаблона меню
-                            "MAX_LEVEL" => "1",    // Уровень вложенности меню
-                            "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
-                                0 => "",
-                            ),
-                            "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
-                            "MENU_CACHE_TYPE" => "N",    // Тип кеширования
-                            "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                            "ROOT_MENU_TYPE" => "left",    // Тип меню для первого уровня
-                            "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                        ),
-                        false
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(""),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "MENU_THEME" => "site",
+                            "ROOT_MENU_TYPE" => "top",
+                            "USE_EXT" => "N"
+                        )
                     ); ?>
-                </ul>
             </nav>
         </div>
     </header>

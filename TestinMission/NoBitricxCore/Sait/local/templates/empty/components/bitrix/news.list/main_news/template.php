@@ -12,14 +12,18 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-	<? foreach ($arResult["ITEMS"] as $arItem) : ?>
-		<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news__link">
-			<div class="news__img">
-				<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="" class="news__img">
-			</div>
-			<div class="news__text">
-				<span class="news__date"><? echo $arItem["DISPLAY_ACTIVE_FROM"] ?> г.</span>
-				<h4 class="news__title"><? echo $arItem["NAME"] ?></h4>
-			</div>
-		</a>
-	<? endforeach; ?>
+<? foreach ($arResult["ITEMS"] as $arItem) : ?>
+	<?
+	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+	?>
+	<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="news__link" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+		<div class="news__img">
+			<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="" class="news__img">
+		</div>
+		<div class="news__text">
+			<span class="news__date"><? echo $arItem["DISPLAY_ACTIVE_FROM"] ?> г.</span>
+			<h4 class="news__title"><? echo $arItem["NAME"] ?></h4>
+		</div>
+	</a>
+<? endforeach; ?>

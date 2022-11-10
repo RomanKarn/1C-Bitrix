@@ -1,6 +1,6 @@
 <?
-if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
-	die();
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+  die();
 ?>
 <footer class="page-footer">
   <div class="container">
@@ -11,14 +11,14 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
           <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.svg" alt="Спортивная школа «Ва-банк»" width="60" height="58">
         </div>
         <div class="footer-contacts__text">
-          <span><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__text.php", array(),array("MODE" => "text")); ?></span>
-          <a href="tel:<? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(),array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(),array("MODE" => "text")); ?></a>
-          <a href="mailto:<? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(),array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(),array("MODE" => "text")); ?></a>
+          <span><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__text.php", array(), array("MODE" => "text")); ?></span>
+          <a href="tel:<? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(), array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/phone.php", array(), array("MODE" => "text")); ?></a>
+          <a href="mailto:<? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(), array("MODE" => "text")); ?>"><? $APPLICATION->IncludeFile(SITE_DIR . "include/email.php", array(), array("MODE" => "text")); ?></a>
         </div>
       </div>
       <div class="footer-contacts__point footer-contacts__point--social">
         <div class="footer-contacts__text">
-          <span><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__text-social.php", array(),array("MODE" => "text")); ?></span>
+          <span><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__text-social.php", array(), array("MODE" => "text")); ?></span>
         </div>
         <div class="footer-contacts__social">
           <a href="https://vk.com/" target="_blank">
@@ -38,8 +38,8 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
       </div>
     </section>
     <div class="footer-contacts__copyright copyright">
-      <p><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__copyright.php", array(),array("MODE" => "text")); ?></p>
-      <p class="redramka"><a href="https://redramka.ru/" target="_blank"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka.php", array(),array("MODE" => "text")); ?> <span class="redramka__brand"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka__brand.php", array(),array("MODE" => "text")); ?></span></a></p>
+      <p><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-contacts__copyright.php", array(), array("MODE" => "text")); ?></p>
+      <p class="redramka"><a href="https://redramka.ru/" target="_blank"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka.php", array(), array("MODE" => "text")); ?> <span class="redramka__brand"><? $APPLICATION->IncludeFile(SITE_DIR . "include/footer-redramka__brand.php", array(), array("MODE" => "text")); ?></span></a></p>
     </div>
   </div>
 </footer>
@@ -48,38 +48,28 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <div class="modal j-modal" id="appointment-modal">
   <div class="modal__block modal__block--narrow j-modal-block">
     <div class="appointment-modal">
-      <form action="#" class="appointment__form form" method="post">
-        <p class="appointment__title"> Запишись на первое
-          <strong>Бесплатное занятие</strong>
-        </p>
-        <div class="form__field">
-          <label class="visually-hidden" for="modal-name">Имя</label>
-          <input type="text" class="form__input" placeholder="Имя" id="modal-name" name="modal-name" required="">
-        </div>
-        <div class="form__field">
-          <label class="visually-hidden" for="modal-phone">Телефон</label>
-          <input type="tel" class="form__input" placeholder="Телефон" id="modal-phone" name="modal-phone" required="">
-        </div>
-        <div class="form__field">
-          <select class="form__select j-select" name="modal-age" id="modal-age">
-            <option value=" " disabled="" selected=""> Возраст ребенка</option>
-            <option value="4-6">4-6 лет</option>
-            <option value="7-9">7-9 лет</option>
-            <option value="10-12">10-12 лет</option>
-            <option value="13-15">13-15 лет</option>
-          </select>
-        </div>
-        <div class="form__field">
-          <input type="checkbox" class="visually-hidden form__input--checkbox " id="modal-agree" name="agree" required="">
-          <label for="modal-agree" class="form__label--checkbox"> Я согласен на обработку персональных данных
-          </label>
-        </div>
-        <button class="button appointment__button button--wide" type="submit">Записаться</button>
-      </form>
+      <? $APPLICATION->IncludeComponent(
+        "bitrix:main.feedback",
+        "feedbackpersonal",
+        array(
+          "EMAIL_TO" => "WorkKarn@yandex.ru",    // E-mail, на который будет отправлено письмо
+          "EVENT_MESSAGE_ID" => array(    // Почтовые шаблоны для отправки письма
+            0 => "7",
+          ),
+          "OK_TEXT" => "Спасибо, ваше сообщение принято.",    // Сообщение, выводимое пользователю после отправки
+          "REQUIRED_FIELDS" => array(    // Обязательные поля для заполнения
+            0 => "NAME",
+
+          ),
+          "USE_CAPTCHA" => "N",    // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+        ),
+        false
+      ); ?>
     </div>
     <button class="modal__close j-modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </div>
 </div>
+
 <div class="modal j-modal" id="partners-modal">
   <div class="modal__block j-modal-block">
     <div id="partner-info" class="partner-info">
@@ -102,48 +92,28 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
           вопросам (проведение личной встречи, подробности, стоимость, объемы «партнерских пакетов», эксклюзивные и
           дополнительные возможности, бартер, совместные мероприятия и проекты)
         </p>
-        <form action="#" class="partner-info__form form" method="post">
-          <legend class="partner-info__legend">Оставьте заявку и мы свяжемся с вами в&nbsp;ближайшее время</legend>
-          <div class="form__tablet-row">
-            <div class="form__tablet-column">
-              <div class="form__field">
-                <label class="visually-hidden" for="partner-org">Организация</label>
-                <input type="text" class="form__input" placeholder="Организация" id="partner-org" name="partner-org" required="">
-              </div>
-            </div>
-            <div class="form__tablet-column">
-              <div class="form__field">
-                <label class="visually-hidden" for="partner-email">Email</label>
-                <input type="text" class="form__input" placeholder="Email" id="partner-email" name="partner-email" required="">
-              </div>
-            </div>
-          </div>
-          <div class="form__tablet-row">
-            <div class="form__tablet-column">
-              <div class="form__field">
-                <label class="visually-hidden" for="partner-contact">Контактное лицо</label>
-                <input type="text" class="form__input" placeholder="Контактное лицо" id="partner-contact" name="partner-contact" required="">
-              </div>
-            </div>
-            <div class="form__tablet-column">
-              <div class="form__field">
-                <label class="visually-hidden" for="partner-phone">Телефон</label>
-                <input type="tel" class="form__input" placeholder="Телефон" id="partner-phone" name="partner-phone" required="">
-              </div>
-            </div>
-          </div>
-          <div class="form__field">
-            <input type="checkbox" class="visually-hidden form__input--checkbox " id="partner-agree" name="partner-agree" required="">
-            <label for="partner-agree" class="form__label--checkbox"> Я согласен на обработку персональных данных
-            </label>
-          </div>
-          <button class="button partner-info__button button--wide" type="submit">Отправить заявку</button>
-        </form>
+        <? $APPLICATION->IncludeComponent(
+                    "bitrix:main.feedback",
+                    "feedbackcompani",
+                    array(
+                        "EMAIL_TO" => "WorkKarn@yandex.ru",    // E-mail, на который будет отправлено письмо
+                        "EVENT_MESSAGE_ID" => array(    // Почтовые шаблоны для отправки письма
+                            0 => "32",
+                        ),
+                        "OK_TEXT" => "Спасибо, ваше сообщение принято.",    // Сообщение, выводимое пользователю после отправки
+                        "REQUIRED_FIELDS" => array(    // Обязательные поля для заполнения
+                            0 => "NAME",
+                        ),
+                        "USE_CAPTCHA" => "N",    // Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей
+                    ),
+                    false
+                ); ?>
       </div>
     </div>
     <button class="modal__close j-modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </div>
 </div>
+
 <!-- Не знаю как предать значения из инфо блока -->
 <div class="modal j-modal" id="trainers-modal">
   <div class="modal__block modal__block--teachers j-modal-block">
@@ -168,15 +138,16 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <button class="modal__close j-modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </div>
 </div>
+
 <!-- Модалка с текстом для вывода сообщения о принятии заявки -->
 <div class="modal j-modal j-message" id="message">
-    <div class="modal__block modal__block--text j-modal-block">
-      <div>
-        <h1 class="j-modal-title">Заявка отправлена</h1>
-        <p class="j-modal-caption modal__caption">Мы свяжемся с вами в&nbsp;ближайшее время</p>
-      </div>
-      <button class="modal__close j-modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+  <div class="modal__block modal__block--text j-modal-block">
+    <div>
+      <h1 class="j-modal-title">Заявка отправлена</h1>
+      <p class="j-modal-caption modal__caption">Мы свяжемся с вами в&nbsp;ближайшее время</p>
     </div>
+    <button class="modal__close j-modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+  </div>
 
 </div>
 
@@ -189,4 +160,5 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 
 </body>
+
 </html>
